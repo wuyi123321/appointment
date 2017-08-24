@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缘分天空注册</title>
+    <meta name="generator" content="editplus" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+</head>
+<link rel="stylesheet" href="css/eleui.css">
+<link rel="stylesheet" href="css/comcss.css" type="text/css" />
+<link rel="stylesheet" href="css/index.css" type="text/css" />
+
+<body>
+<div id="main">
+<div class="title">结缘注册</div>
+<div class="personmessage">
+    <div class="p_title">基本信息</div>
+    <div class="content">
+        <table>
+            <tr>
+                <td class="one">姓名</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="one">工号</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="one">部门</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="one">职位</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="one">电话</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="personmessage">
+    <div class="p_title">完善信息</div>
+    <div class="content">
+        <ul>
+            <li>性别<el-radio class="radio" v-model="radio" label="1">男</el-radio>
+                <el-radio class="radio" v-model="radio" label="2">女</el-radio></li>
+            <li>年龄</li>
+        </ul>
+    </div>
+</div>
+<div class="personmessage">
+    <div class="p_title">结缘宣言</div>
+    <div class="message">
+
+    </div>
+</div>
+<div class="addphoto"><i class="el-icon-plus"></i></div>
+<div class="submit"><el-button @click="visible = true">开始结缘</el-button></div>
+</div>
+</body>
+<script src="conjs/comjs.js"></script>
+<script src="conjs/vue@2.4.js"></script>
+<script src="conjs/elejs.js"></script>
+<script>
+   var a= new Vue({
+        el: '#main',
+        data: function() {
+            return { visible: false,
+                radio:"1"
+            }
+        }
+    })
+</script>
+
+</html>

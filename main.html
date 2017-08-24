@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缘分天空主页</title>
+    <meta name="generator" content="editplus" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+    <meta name="author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+</head>
+<link rel="stylesheet" href="css/eleui.css">
+<link rel="stylesheet" href="css/comcss.css" type="text/css" />
+<link rel="stylesheet" href="css/main.css" type="text/css" />
+<body>
+<template id="news">
+    <div class="block">
+        <el-carousel height="150px">
+            <el-carousel-item v-for="item in 4" :key="item">
+                <h3>{{ item }}</h3>
+            </el-carousel-item>
+        </el-carousel>
+        <div id="nav">
+            <ul>
+                <li>女神专栏</li>
+                <li>活泼可爱</li>
+                <li>工作达人</li>
+            </ul>
+        </div>
+    </div>
+
+</template>
+<div id="main">
+    <router-view></router-view>
+    <div id="bottom">
+    <div class="item"><router-link to="/main">主页</router-link></div>
+    <div class="item"><router-link to="/love">情感天地</router-link></div>
+    <div class="item"><router-link to="/message">消息</router-link></div>
+    <div class="item"><router-link to="/me">我</router-link></div>
+</div>
+</div>
+
+</body>
+<script src="conjs/comjs.js"></script>
+<script src="conjs/vue@2.4.js"></script>
+<script src="conjs/elejs.js"></script>
+<script src="conjs/vue-router.js"></script>
+
+<script>
+
+    const a = { template: '#news'  }
+    const love = { template: '<div>love</div>' }
+    const message = { template: '<div>message</div>' }
+    const me = { template: '<div>love</div>' }
+    const routes = [
+        { path: '/main', component: a },
+        { path: '/love', component: love},
+        { path: '/message', component: message },
+        { path: '/me', component:me }
+    ];
+    const router = new VueRouter({
+        routes // （缩写）相当于 routes: routes
+    })
+    new Vue({
+        router,
+        el: '#main',
+        data: function() {
+            return { visible: false,
+                radio:"1"
+            }
+        }
+    })
+</script>
+
+</html>
